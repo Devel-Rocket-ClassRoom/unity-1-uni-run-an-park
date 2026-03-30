@@ -7,7 +7,6 @@ public class ChunkMaker : MonoBehaviour
     private int _createdCount = 0;
     private int _count;
     public GameObject[] Chunk;
-    private int currentChunkCount = 0;
 
     public float xPos = 10f;
 

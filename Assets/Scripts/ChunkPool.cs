@@ -7,7 +7,6 @@ using UnityEngine;
 public class ChunkPool
 {
     private Queue<GameObject> _items = new Queue<GameObject>();
-    private int createdTime = 0;
 
     public ChunkPool(List<GameObject> items)
     {
@@ -19,7 +18,7 @@ public class ChunkPool
 
     public void GetRandomChunk()
     {
-        
+
     }
 
     public void ReturnRandomChunk(GameObject item)

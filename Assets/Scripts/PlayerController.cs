@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
 
     void PlayerInput()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && !isAlreadyJump)
+        if (Input.GetKeyDown(KeyCode.Space) && !isAlreadyJump)
         {
             if (!isGrounded) { isAlreadyJump = true; animator.SetTrigger("DoubleJump"); }
 
