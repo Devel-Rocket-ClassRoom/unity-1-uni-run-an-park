@@ -4,16 +4,7 @@ public class SetChunk : MonoBehaviour
 {
     private GameObject[] Coin;
 
-    private void Awake()
-    {
-        CacheCoinsIfNeeded();
-    }
-
-    private void OnEnable()
-    {
-        CacheCoinsIfNeeded();
-    }
-
+   
     private void OnDisable()
     {
         CacheCoinsIfNeeded();

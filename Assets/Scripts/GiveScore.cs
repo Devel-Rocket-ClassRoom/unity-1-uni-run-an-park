@@ -8,32 +8,12 @@ public class GiveScore : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameObject pickedCoin = null;
-
-        // Handle both setups: script on Coin or script on Player.
-        if (CompareTag("Coin") && collision.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
-            pickedCoin = gameObject;
+            GameManager.Instance.currentScore++;
+            GameManager.Instance.Energy += 0.1f;
+            GameManager.Instance.Score++;
+            gameObject.SetActive(false);
         }
-        else if (CompareTag("Player") && collision.CompareTag("Coin"))
-        {
-            pickedCoin = collision.gameObject;
-        }
-
-        if (pickedCoin == null)
-        {
-            return;
-        }
-
-        if (GameManager.Instance == null)
-        {
-            Debug.LogError("GameManager.Instance is null. Cannot give score.");
-            return;
-        }
-
-        GameManager.Instance.currentScore++;
-        GameManager.Instance.Energy += 0.1f;
-        GameManager.Instance.Score++;
-        pickedCoin.SetActive(false);
     }
 }
